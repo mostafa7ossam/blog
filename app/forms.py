@@ -37,5 +37,5 @@ class RegistrationForm(FlaskForm):
 
 class BlogPostCommentForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
-    comment = StringField('text', validators=[DataRequired()])
+    comment = TextAreaField('text', validators=[DataRequired()])
     submit = SubmitField('Commment')
