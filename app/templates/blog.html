@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Blog</h1>
+    {%for post in posts %}
+    <div><p><a href="{{ url_for('blogPost', post_id = post.id) }}">{{ post.title }} : <b>{{ post.timestamp }}</a></b></p></div>
+    {% endfor %}
+{% endblock %}
