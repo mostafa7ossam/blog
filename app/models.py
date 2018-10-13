@@ -40,7 +40,8 @@ class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(64))
     text = db.Column(db.String(1024))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    #should be changed to datetime.utcnow in case of multiple time zones
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
     comments = db.relationship('BlogPostComment', backref='post', lazy='dynamic')
 
 
@@ -48,7 +49,7 @@ class BlogPostComment(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(64), index=True)
     comment = db.Column(db.String(128), index=True)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
     post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
 
 

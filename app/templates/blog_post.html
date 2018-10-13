@@ -6,7 +6,7 @@
     <div> {{post.text}}</div>
       <div><h3>comments</h3></div>
     {%for comment in comments %}
-    <div>{{ comment.name }} : <b>{{ comment.comment }}</b></div>
+      {% include '_post_comment.html' %}
     {% endfor %}
 
     <form action="" method="post">

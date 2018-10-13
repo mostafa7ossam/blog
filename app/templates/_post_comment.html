@@ -1,0 +1,10 @@
+<table>
+    <tr valign="top">
+        <td><img src= "/static/user.png" height="42" width="42"></td>
+        <td>
+            {{ comment.name }}
+            said <script>document.write(moment("{{ comment.timestamp }}").fromNow());</script>:
+            <br>{{ comment.comment }}
+        </td>
+    </tr>
+</table>
